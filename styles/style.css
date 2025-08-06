@@ -1,0 +1,247 @@
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    background: url('assets/BG.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+
+  /* === Header === */
+  .site-header {
+    background: linear-gradient(90deg, #000000f1, #242728);
+    color: #00ffcc;
+    padding: 25px 0;
+    box-shadow: 0 0 20px rgba(9, 74, 61, 0.725);
+  }
+
+  .site-header h1 {
+    float: left;
+    margin-left: 20px;
+    font-size: 1.8rem;
+  }
+
+  .site-header nav {
+    float: right;
+    margin-right: 20px;
+  }
+
+  .site-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  .site-header nav a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .site-header nav a:hover {
+    color: #1be7ff;
+  }
+
+  /* === Section Base === */
+  section {
+    background: rgba(148, 14, 14, 0.03);
+    border-radius: 12px;
+    padding: 50px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(25, 147, 147, 0.159);
+    backdrop-filter: blur(3px);
+  }
+
+  /* === Headings === */
+  h2 {
+    font-size: 2rem;
+    color: #00f0ff;
+    margin-bottom: 25px;
+    border-left: 5px solid #00ffcc;
+    padding-left: 12px;
+  }
+
+  /* === About Me === */
+  .about-section p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+  }
+
+  /* === Skills === */
+  .skills-section ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+  }
+
+  .skills-section li {
+    background-color: rgba(0, 255, 204, 0.05);
+    border-left: 4px solid #00ffcc;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .skills-section li:hover {
+    background-color: rgba(0, 255, 204, 0.1);
+    transform: scale(1.02);
+  }
+
+  /* === Projects === */
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .project-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-left: 6px solid #1be7ff;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .project-item:hover {
+    box-shadow: 0 0 20px rgba(27, 231, 255, 0.2);
+  }
+
+  .project-item h3 {
+    color: #1be7ff;
+    margin-bottom: 10px;
+  }
+
+  /* === Certificates === */
+  .certificate-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+  }
+
+  .certificate-carousel img {
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #00ffcc;
+    transition: transform 0.3s, border 0.3s;
+    flex-shrink: 0;
+  }
+
+  .certificate-carousel img:hover {
+    transform: scale(1.05);
+    border-color: #1be7ff;
+  }
+
+  .certificate-carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .certificate-carousel::-webkit-scrollbar-thumb {
+    background-color: #00ffcc;
+    border-radius: 10px;
+  }
+
+  /* === Contact === */
+  .contact-section p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+
+  .contact-section li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+  }
+
+  .contact-section a {
+    color: #1be7ff;
+    text-decoration: none;
+  }
+
+  .contact-section a:hover {
+    text-decoration: underline;
+  }
+
+  /* === Footer === */
+  .site-footer {
+    background: #0a0f1d;
+    color: #aaa;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.95rem;
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .site-header h1,
+    .site-header nav {
+      float: none;
+      text-align: center;
+    }
+
+    .site-header nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .certificate-carousel img {
+      height: 150px;
+    }
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent layer */
+    z-index: -1;
+  }
+
+  body {
+    position: relative;
+    z-index: 0;
+  }
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  background: black; /* optional: or keep it transparent */
+  pointer-events: none;
+}
+
